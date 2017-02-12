@@ -15,8 +15,6 @@
   width: 70%;
   height: 15%;
   padding: 25px;
-  /*border: 1px solid black;*/
-  /*background-color: blue;*/
 }
 
 .isiBox{
@@ -24,5 +22,5 @@
     width: 30%;
     height: 150px;
     display: inline-block;
-    background-color: rgb(194, 194, 194)
-}
+    /*background-color: rgb(10, 173, 32);
+}*/

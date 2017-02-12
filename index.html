@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -13,38 +14,38 @@
 <body>
     <div class="ui container center aligned containerTOP">
         <div class="boxTitle">
-          <h3 class="ui header">Simple Simon Says</h3>
-          <button class="ui red button">Cleck ME</button>
+            <h3 class="ui header">Simple Simon Says</h3>
+            <button onclick="randomColor()" class="ui red button">Click ME</button>
         </div>
 
         <div class="boxColor">
-          <div class="isiBox">
+            <div id="1" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="2" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="3" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="4" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="5" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="6" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="7" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="8" class="isiBox">
 
-          </div>
-          <div class="isiBox">
+            </div>
+            <div id="9" class="isiBox">
 
-          </div>
+            </div>
 
         </div>
     </div>
@@ -52,8 +53,18 @@
 
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <script type="text/javascript">
+        function randomColor() {
+            $.ajax({
+                url: "http://localhost:3000/api/colors",
+                type: "GET",
+                success: function(result) {
+                      $(`#${result.randomBox}`).css("background-color",`${result.bgColor}`)
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
